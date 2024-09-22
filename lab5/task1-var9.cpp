@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+/*
+Задание 1
+*/
+
 int main()
 {
     int count, multi = 1, number, mx, mxi;
@@ -24,7 +28,9 @@ int main()
     cout << "Произведение целых чисел последовательности, оканчивающихся на 2: " << multi << endl;
     cout << "Максимальное из данных чисел и его индекс в последователбности: " << mx << " - " << mxi << endl;    
 
-
+/*
+Задание 2
+*/
 
     int N, nums[10]{}, num, mx2 = 0, mxi2 = -1;
     const int SIZE2 = 10;
