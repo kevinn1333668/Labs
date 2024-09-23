@@ -1,7 +1,10 @@
 #include <iostream>
 using namespace std;
 
+// Задача 1 Грузоперевозка
+
 float coefficient(float Q,float P,float A)
+
 {   
     float K;
     if (Q > A)
@@ -15,7 +18,16 @@ float coefficient(float Q,float P,float A)
         return K;
     }
 }
-
+int solution(int number) 
+{
+    int sum = 0;
+    while (number) 
+    {
+        sum += number % 10;
+        number /= 10;
+    }
+    return sum;
+}
 int main()
 {
     float  profit1, profit2, Q1, P1, Q2, P2, A, price = 0;
@@ -37,4 +49,22 @@ int main()
         }
     } 
     cout << "Минимальная цена: " << price << endl;
+
+
+// Задача 2 Счатливые билетики
+
+
+
+    int cnt = 0;
+    for (int i = 0 ; i < 1000 ; i++)
+    {
+        for (int j = 0 ; j < 1000 ; j++)
+        {
+            if (solution(i) == solution(j))
+            {
+                cnt += 1;
+            }
+        }
+    }
+    cout << cnt << endl;
 }
