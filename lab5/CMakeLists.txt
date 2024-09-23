@@ -11,4 +11,4 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 # Сказать программе, что должен быть исполняемый файл
-add_executable("${PROJECT_NAME}" task1-var9.cpp)
+add_executable("${PROJECT_NAME}" task-var9.cpp)
