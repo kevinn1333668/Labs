@@ -5,6 +5,7 @@ using namespace std;
 
 // ФУНКЦИИ ДЛЯ ЗАДАНИЙ
 
+
 int FirstDigit(int number) // ВОЗВРАЩАЕТ ПЕРВУЮ ЦИФРУ ЧИСЛА
 {
     int x;
@@ -141,5 +142,44 @@ int main()
     sort2(numbers, mult, SIZE);
     cout << "Вывод задания №2: " << endl;
     write(numbers, SIZE);
+
+// Задание 3 
+    int ROW, COL; // Ввод строк и столбцоы в массив
+    cout << "Введите кол-во строк и столбцов матрицы: ";
+    cin >> ROW >> COL;
+    int arr[ROW][COL], chet = 0, min_chet = 99999, index;
+    {
+        for (int i = 0; i < ROW ; i++) // заполнение массива
+        {
+            chet = 0;
+            for (int j = 0; j < COL ; j++)
+            {
+                arr[i][j] = rand() % 10;
+                if (arr[i][j] % 2 == 0)
+                {
+                    chet += 1;
+                }        
+            }
+            if (chet < min_chet)
+            {
+                min_chet = chet;
+                index = i;
+            }
+        }
+        for (int j = 0 ; j < COL ; j++)
+        {
+            arr[index][j] = arr[index][j] * arr[index][j];
+        }
+        
+    }
+    cout << "Вывод задания №3: " << endl;
+    for (int i = 0; i < ROW ; i++) // заполнение массива
+    {
+        for (int j = 0; j < COL ; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
 
