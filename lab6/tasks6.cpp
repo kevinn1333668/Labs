@@ -63,7 +63,7 @@ void massive(int arr[], int const SIZE) // ИНИЦИЛИЗАТОР МАССИВ
 {
     for (int i = 0 ; i < SIZE ; i++)
     {
-        arr[i] = rand()%1000;
+        arr[i] = i + 1;
     }
 }
 int del(int x) // ПРОВЕРКА НА ПРОСТОЕ ЧИСЛО
@@ -83,8 +83,9 @@ int del(int x) // ПРОВЕРКА НА ПРОСТОЕ ЧИСЛО
 {
     for (int i = 0 ; i < SIZE ; i++)
     {
-        cout << arr[i] << endl;
+        cout << arr[i] << ' ';
     }
+    cout << endl;
 }
 
 void sort(int arr[], int const SIZE) // СОРТИРОВКА МАССИВА ПУЗЫРЬКОМ
@@ -112,13 +113,14 @@ void sort(int arr[], int const SIZE) // СОРТИРОВКА МАССИВА ПУ
 
 int main()
 {
-    srand(time(NULL));
-    int const SIZE = 10; // ВВОД РАЗМЕРА МАССИВА
-    int nums[SIZE];
+    int SIZE; // ВВОД РАЗМЕРА МАССИВА
+    cout << "Введите n <= 10000: ";
+    cin >> SIZE;
+    int *nums = new int[SIZE];
     bool flag = false;
-    for (int i = 0 ; i < SIZE ; i++)
+    for (int i = 0 ; i < SIZE; i++)
     {
-        nums[i] = rand()%10000;
+        nums[i] = i + 1;
         if (del(nums[i]))
         {
             flag = true;
@@ -128,33 +130,35 @@ int main()
     {
         sort(nums, SIZE);
     }
-    cout << "Вывод задания №1: " << endl;
     write(nums, SIZE);
 
 // Задание 2
 
-    int numbers[SIZE], mult[SIZE];
-    massive(numbers, SIZE);
-    for (int i = 0; i < SIZE ; i++)
+    int SIZE2;
+    cout << "Введите n <= 1000: ";
+    cin >> SIZE2;
+    int *numbers = new int[SIZE2], *mult = new int[SIZE2];
+    massive(numbers, SIZE2);
+    for (int i = 0; i < SIZE2 ; i++)
     {
         mult[i] = MultiDigit(numbers[i]);
     }
-    sort2(numbers, mult, SIZE);
-    cout << "Вывод задания №2: " << endl;
-    write(numbers, SIZE);
+    sort2(numbers, mult, SIZE2);
+    write(numbers, SIZE2);
 
 // Задание 3 
     int ROW, COL; // Ввод строк и столбцоы в массив
     cout << "Введите кол-во строк и столбцов матрицы: ";
     cin >> ROW >> COL;
-    int arr[ROW][COL], chet = 0, min_chet = 99999, index;
+    int arr[ROW][COL], chet = 0, min_chet = 99999, index, cnt = 0;
     {
         for (int i = 0; i < ROW ; i++) // заполнение массива
         {
             chet = 0;
             for (int j = 0; j < COL ; j++)
             {
-                arr[i][j] = rand() % 10;
+                cnt++ ;
+                arr[i][j] = cnt;
                 if (arr[i][j] % 2 == 0)
                 {
                     chet += 1;
@@ -172,7 +176,6 @@ int main()
         }
         
     }
-    cout << "Вывод задания №3: " << endl;
     for (int i = 0; i < ROW ; i++) // заполнение массива
     {
         for (int j = 0; j < COL ; j++)
