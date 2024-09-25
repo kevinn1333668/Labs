@@ -29,11 +29,11 @@ void sort2(int arr[], int arrMulti[], int const SIZE) // СОРТИРОВКА М
             }
             else if ((arrMulti[j] == arrMulti[j + 1])) 
             {
-                if ((FirstDigit(arr[j]) % 10) > (FirstDigit(arr[j + 1]) % 10)) // сортировка по первой цифре числа
+                if ((FirstDigit(arr[j])) > (FirstDigit(arr[j + 1]))) // сортировка по первой цифре числа
                 {
                     swap(arr[j], arr[j + 1]);
                 }
-                else if ((FirstDigit(arr[j]) % 10) == (FirstDigit(arr[j + 1]) % 10))
+                else if ((FirstDigit(arr[j])) == (FirstDigit(arr[j + 1])))
                 {
                     if (arr[j] > arr[j + 1]) // сортировка по самим числам
                     {
@@ -87,6 +87,14 @@ int del(int x) // ПРОВЕРКА НА ПРОСТОЕ ЧИСЛО
     }
     cout << endl;
 }
+    void writeD(int arr[], int const SIZE) // ВЫВОД ДИНАМИЧЕСКОГО МАССИВА
+{
+    for (int i = 0 ; i < SIZE ; i++)
+    {
+        cout << *(arr + i) << ' ';
+    }
+    cout << endl;
+}
 
 void sort(int arr[], int const SIZE) // СОРТИРОВКА МАССИВА ПУЗЫРЬКОМ
 {
@@ -113,7 +121,7 @@ void sort(int arr[], int const SIZE) // СОРТИРОВКА МАССИВА ПУ
 
 int main()
 {
-    int SIZE; // ВВОД РАЗМЕРА МАССИВА
+    /*int SIZE; // ВВОД РАЗМЕРА МАССИВА
     cout << "Введите n <= 10000: ";
     cin >> SIZE;
     int *nums = new int[SIZE];
@@ -150,7 +158,7 @@ int main()
     int ROW, COL; // Ввод строк и столбцоы в массив
     cout << "Введите кол-во строк и столбцов матрицы: ";
     cin >> ROW >> COL;
-    int arr[ROW][COL], chet = 0, min_chet = 99999, index, cnt = 0;
+    int arr[ROW][COL], chet = 0, min_chet = __INT_MAX__, index, cnt = 0;
     {
         for (int i = 0; i < ROW ; i++) // заполнение массива
         {
@@ -183,6 +191,39 @@ int main()
             cout << arr[i][j] << " ";
         }
         cout << endl;
+    }*/
+    // 4 Задание
+    int const SIZE4 = 20001;
+    int arr4[SIZE4], n, temp1, temp2;
+    cout << "Введите n <= 10000: ";
+    cin >> n;   
+    massive(arr4, n);
+    for (int i = 0 ; i < n; i++)
+    {
+        if (MultiDigit(arr4[i]) == 180)
+        {
+            n--;
+            for (int j = i ; j < n ; j++)
+            {
+                arr4[j] = arr4[j + 1];
+            }
+            i--;
+
+        }
+        else if ((FirstDigit(arr4[i]) == 1) && ((arr4[i] % 10) == 1))
+        {
+            temp1 = arr4[i + 1];
+            arr4[i + 1] = arr4[i];
+            n++;
+            for (int j = i + 1 ; j < n ; j++)
+            {
+                temp2 = arr4[j + 1]; // 1 2 2 3 4 5 6  temp1 = ? temp2 = ?
+                arr4[j + 1] = temp1;
+                temp1 = temp2;
+            }
+            i++;
+        }
     }
-}
+    write(arr4, n);
+}   
 
