@@ -121,7 +121,7 @@ void sort(int arr[], int const SIZE) // СОРТИРОВКА МАССИВА ПУ
 
 int main()
 {
-    /*int SIZE; // ВВОД РАЗМЕРА МАССИВА
+    int SIZE; // ВВОД РАЗМЕРА МАССИВА
     cout << "Введите n <= 10000: ";
     cin >> SIZE;
     int *nums = new int[SIZE];
@@ -139,6 +139,7 @@ int main()
         sort(nums, SIZE);
     }
     write(nums, SIZE);
+    delete [] nums;
 
 // Задание 2
 
@@ -153,6 +154,8 @@ int main()
     }
     sort2(numbers, mult, SIZE2);
     write(numbers, SIZE2);
+    delete [] numbers;
+    delete [] mult; 
 
 // Задание 3 
     int ROW, COL; // Ввод строк и столбцоы в массив
@@ -191,7 +194,7 @@ int main()
             cout << arr[i][j] << " ";
         }
         cout << endl;
-    }*/
+    }
     // 4 Задание
     int const SIZE4 = 20001;
     int arr4[SIZE4], n, temp1, temp2;
