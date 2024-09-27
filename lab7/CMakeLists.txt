@@ -7,8 +7,6 @@ set(CMAKE_CXX_STANDARD 17)  # Используем стандарт C++17
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-# Включаем каталог include, чтобы CMake знал, где искать заголовочные файлы
-include_directories(include)
 
 # Добавляем исполняемый файл и все .cpp файлы
 add_executable("${PROJECT_NAME}" functions.cpp main.cpp)
