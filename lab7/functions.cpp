@@ -55,7 +55,7 @@ void SortArray(int *arr, int SIZE) // СОРТИРОВКА МАССИВА ПУЗ
     }
 }
 
-bool MaxMin(int **arr, int SIZE) // СУММА МИНИМУМА И МАКСИМУМА
+bool MaxMinSum(int **arr, int SIZE) // СУММА МИНИМУМА И МАКСИМУМА
 {
     bool flag = false;
     int mn = __INT_MAX__, mx = -2147483646;

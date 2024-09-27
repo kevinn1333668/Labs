@@ -13,7 +13,7 @@ int main()
         arr[i] = new int[SIZE];
     }
     MyNamespace::readArray(arr, SIZE);
-    if (MyNamespace::MaxMin(arr, SIZE))
+    if (MyNamespace::MaxMinSum(arr, SIZE))
     {
         for (int i = 0; i < SIZE ; i++)
         {

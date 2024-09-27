@@ -12,7 +12,7 @@ void readArray(int **arr, int size);
 
 bool EightInNumber(int number);     // ПРОВЕРКА НА ЦИФРУ 8 В ЧИСЛЕ
 void SortArray(int *arr,int SIZE);  // СОРТИРОВКА МАССИВА
-bool MaxMin(int **arr, int SIZE);   // ПРОВЕРКА НА РАВНОСТЬ МАКСИМАЛЬНОГО И МИНИМАЛЬНОГО ЗНЧЕНИЯ НУЛЮ
+bool MaxMinSum(int **arr, int SIZE);   // ПРОВЕРКА НА РАВНОСТЬ МАКСИМАЛЬНОГО И МИНИМАЛЬНОГО ЗНЧЕНИЯ НУЛЮ
 bool EightInRow(int *arr, int SIZE);    // ПРОВЕРКА НА ЦИФРУ 8 В СТРОКЕ МАТРИЦЫ
 
 // Функция записи данных
