@@ -8,7 +8,7 @@ using namespace std;
 
 namespace MyNamespace 
 {
-int HowMuchWords(char letter)
+int HowMuchWords(char letter) // СЧЁТ СЛОВ С ЗАДАННОЙ БУКВОЙ
 {
     int count = 0;
     string word;
@@ -28,7 +28,7 @@ int HowMuchWords(char letter)
     return count;
 }
 
-void CleanWord(std::string &word)
+void CleanWord(std::string &word) // УДАЛЕНИЕ ЛИШНИХ СИМВОЛОВ ИЗ СЛОВА
 {
     string clear_word = "";
     for (int i = 0 ; i < word.length() ; i++)
@@ -42,7 +42,7 @@ void CleanWord(std::string &word)
 }
 
 
-void SortArray(std::string *words, int count)
+void SortArray(std::string *words, int count) // СОРТИРОВКА ПО ДЛИНЕ СЛОВ
 {
     string temp;
     bool flag = true;
@@ -65,7 +65,7 @@ void SortArray(std::string *words, int count)
 
 }
 
-void WriteWords(std::string *words, int count)
+void WriteWords(std::string *words, int count) // ЗАПИСЬ В ФАЙЛ
 {
     int const MAX_COUNT = 2000;
     int min_count;
@@ -83,7 +83,7 @@ void WriteWords(std::string *words, int count)
 
 }
 
-bool IsUnique(std::string &word, std::string *words, int count)
+bool IsUnique(std::string &word, std::string *words, int count) // ПРОВЕРКА НА УНИКАЛЬНОСТЬ СЛОВА
 {
     bool flag = true;
     for (int i = 0 ; i < count ; i++)

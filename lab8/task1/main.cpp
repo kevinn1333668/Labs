@@ -10,7 +10,6 @@ using namespace std;
 int main()
 {
     char letter;
-    int const MAX_WORDS = 2000;
     int rightWords = 0;
     cout <<  "Введите букву: ";
     cin >> letter;
