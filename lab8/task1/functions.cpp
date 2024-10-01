@@ -50,7 +50,7 @@ void SortArray(std::string *words, int count)
     while ((flag) && (i < count))
     {
         flag = false;
-        for (int j = 0 ; j < count - 1; j++)
+        for (int j = 0 ; j < count - 1 - i; j++)
         {
             if (words[j].length() < words[j + 1].length())
             {
