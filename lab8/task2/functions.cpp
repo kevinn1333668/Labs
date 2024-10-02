@@ -159,7 +159,7 @@ void WriteText(std::string *text, int count)
 {
     for (int i = 0 ; i < count ; i++)
     {
-        cout << text[i] << " " << endl;
+        cout << text[i] << " ";
     }
 }
 }
