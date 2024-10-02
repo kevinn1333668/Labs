@@ -33,4 +33,5 @@ int main()
     }
 
     OM::WriteText(newtext, count);
+    delete[] newtext;
 }
